@@ -10,6 +10,8 @@ class BackgroundComponent extends SpriteAnimationComponent
     await super.onLoad();
 
     size = gameRef.size;
+    // size = gameRef.size * 0.9;
+    // position = (gameRef.size * 0.5) - (size / 2);
 
     final data = SpriteAnimationData.sequenced(
       textureSize: Vector2(640, 360),

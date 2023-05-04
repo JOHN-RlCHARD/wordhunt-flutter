@@ -1,24 +1,15 @@
-// import 'package:flutter/material.dart';
-// import 'package:flame/game.dart';
-// import 'package:wordhunt_phaser/game.dart';
+import 'package:flame/game.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
+import '../games/wordhunt_game.dart';
 
-// WordHunt _wordHunt = WordHunt();
+WordHuntGame _wordHuntGame = WordHuntGame();
 
-// enum Menu {main, gameOver}
+class GamePlay extends StatelessWidget {
+  const GamePlay({super.key});
 
-// class GamePlay extends StatelessWidget {
-//   const GamePlay({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-
-//     return GameWidget(
-//       initialActiveOverlays: [Menu.main.name],
-//       game: _wordHunt,
-//       overlayBuilderMap: {
-//         Menu.main.name: (BuildContext context, Wordhunt gameRef) =>
-//           MainMenu(gameRef: gameRef),
-//       },
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return GameWidget(game: _wordHuntGame);
+  }
+}
