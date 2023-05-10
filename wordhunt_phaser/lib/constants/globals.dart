@@ -5,4 +5,5 @@ class Globals {
 
   //IMAGE
   static const String backgroundSprite = 'spritesheet_bg.png';
+  static const String boxSprite = 'rect.png';
 }
