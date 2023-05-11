@@ -12,7 +12,7 @@ class TextBox extends TextComponent {
   Future<void> onLoad() async {
     await super.onLoad();
 
-    var style = TextStyle(color: Colors.black, fontSize: 20);
+    var style = TextStyle(color: Colors.black, fontSize: 24);
     var regular = TextPaint(style: style);
 
     size = size2 * 0.7;

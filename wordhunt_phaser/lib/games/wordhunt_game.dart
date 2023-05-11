@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:wordhunt_phaser/components/background_component.dart';
 import 'package:wordhunt_phaser/components/box.dart';
 
-class WordHuntGame extends FlameGame {
+class WordHuntGame extends FlameGame with HasTappables {
   @override
   Future<void> onLoad() async {
     await super.onLoad();
@@ -42,20 +42,22 @@ class WordHuntGame extends FlameGame {
 
     add(BackgroundComponent());
 
-    var boxSize = (size[1] * 0.05);
+    var boxSize = (size[1] * 0.07);
 
     var midleX = size[0] / 2;
     var midleY = size[1] / 2;
 
-    var lines = 4;
-    var cols = 4;
+    var lines = 9;
+    var cols = 9;
 
     var startX = midleX - (lines / 2 * boxSize);
     var startY = midleY - (cols / 2 * boxSize);
 
     for (int i = 0; i < cols; i++) {
       for (int j = 0; j < lines; j++) {
-        add(Box(Vector2(startX + (i * boxSize), startY + (j * boxSize)), 'A'));
+        var randLetter = letters[Random().nextInt(letters.length)];
+        add(Box(Vector2(startX + (i * boxSize), startY + (j * boxSize)),
+            randLetter));
       }
     }
   }
